@@ -10,8 +10,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include </usr/include/mysql/my_global.h>
+#include </usr/include/mysql/mysql.h>
 
-main() {
+int main(void) {
 
    MYSQL *conn;
    MYSQL_RES *res;
@@ -34,7 +36,7 @@ main() {
    /* send SQL query */
    if (mysql_query(conn, "show tables")) {
       fprintf(stderr, "%s\n", mysql_error(conn));
-      exit(1);#include </usr/include/mysql/mysql.h>
+      exit(1);
    }
 
    res = mysql_use_result(conn);
